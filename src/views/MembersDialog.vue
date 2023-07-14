@@ -12,14 +12,10 @@
             <v-list-item v-for="(member, index) in members" :key="index">
               <v-row>
                 <v-col cols="auto">
-                  <v-list-item-avatar>
                 <v-icon>mdi-account-circle</v-icon>
-              </v-list-item-avatar>
                 </v-col>
                 <v-col>
-                  <v-list-item-content>
                 <v-list-item-title>{{ member.username }}</v-list-item-title>
-              </v-list-item-content>
                 </v-col>
               </v-row>
             </v-list-item>
@@ -27,14 +23,10 @@
             <v-list-item v-for="(member, index) in invitedUsers" :key="index">
               <v-row>
                 <v-col cols="auto">
-                  <v-list-item-avatar>
                 <v-icon>mdi-account-circle</v-icon>
-              </v-list-item-avatar>
                 </v-col>
                 <v-col>
-                  <v-list-item-content>
                 <v-list-item-title>{{ member.username }}</v-list-item-title>
-              </v-list-item-content>
                 </v-col>
               </v-row>
             </v-list-item>            

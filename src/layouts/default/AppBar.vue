@@ -7,7 +7,7 @@
       >
         <v-app-bar-nav-icon variant="text" @click="openCloseDrawer" ></v-app-bar-nav-icon>
 
-        <v-toolbar-title>{{$t("AppName")}}</v-toolbar-title>
+        <v-toolbar-title>{{ $t("AppName") }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="showInvitationsDialog">
           <v-icon>mdi-email</v-icon>
@@ -20,21 +20,25 @@
         temporary
       >
         <v-list density="compact" nav>
-          <v-list-item  :class="{ 'item-active': selectedItem === index }" @click="addNewRoom()">
-            <v-list-item-icon>
-              <v-icon>mdi-message</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content class="ma-2 font-weight-bold">
-              انشاء غرفة دردشة
-            </v-list-item-content>
+          <v-list-item   @click="addNewRoom()">
+            <v-row>
+            <v-col cols="auto">
+                <v-icon>mdi-message</v-icon>
+              </v-col>
+              <v-col>
+                <v-list-item-title class="ma-2 font-weight-bold">انشاء غرفة دردشة</v-list-item-title>
+              </v-col>
+            </v-row>
           </v-list-item>
-          <v-list-item  :class="{ 'item-active': selectedItem === index }" @click="logout">
-            <v-list-item-icon>
-              <v-icon>mdi-logout</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content class="ma-2 font-weight-bold">
-              تسجيل الخروج
-            </v-list-item-content>
+          <v-list-item  @click="logout">
+            <v-row>
+            <v-col cols="auto">
+                <v-icon>mdi-logout</v-icon>
+              </v-col>
+              <v-col>
+                <v-list-item-title class="ma-2 font-weight-bold">تسجيل الخروج</v-list-item-title>
+              </v-col>
+            </v-row>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -53,7 +57,6 @@
 <script>
 import View from './View.vue'
 import InvitationsDialog from './InvitationsDialog.vue';
-
 export default {
   components: {
     View,

@@ -85,7 +85,7 @@ export default {
          api.post('/accounts/login', this.formData)
             .then(response => {
               localStorage.setItem('token', response.data); 
-              this.$router.push('/rooms');
+              this.$router.push('/');
             })
         }
       },

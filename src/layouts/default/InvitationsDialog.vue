@@ -42,7 +42,7 @@ import 'vue3-toastify/dist/index.css';
       };
     },
     mounted(){
-      this.getInvetations();
+      
     },
     methods:{
       accepte(id){

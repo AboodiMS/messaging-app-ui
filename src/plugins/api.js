@@ -3,7 +3,8 @@ import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 
 const api = axios.create({
-  baseURL: 'https://localhost:7056/api',
+  // baseURL: 'https://localhost:7056/api',
+  baseURL: 'https://localhost:5001/api',
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json'

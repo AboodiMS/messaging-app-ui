@@ -13,14 +13,10 @@
       >
       <v-row>
         <v-col cols="auto">
-          <v-list-item-icon>
           <v-icon>mdi-message</v-icon>
-        </v-list-item-icon>
         </v-col>
         <v-col>
-          <v-list-item-content>
           <v-list-item-title class="room-name">{{ room.name }}</v-list-item-title>
-        </v-list-item-content>
         </v-col>
       </v-row>
       </v-list-item>

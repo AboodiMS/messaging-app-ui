@@ -22,14 +22,12 @@
                 :key="index"
                 class="custom-chat-item my-2"
               >
-                <v-list-item-content>
-                  <v-row :align="center">
+                  <v-row >
                     <v-col>
                       <v-list-item-subtitle class="message-sender">{{ message.username }}</v-list-item-subtitle>
                       <v-list-item-title class="message-content">{{ message.text }}</v-list-item-title>                     
                     </v-col>
                   </v-row>
-                </v-list-item-content>
               </v-list-item>
             </v-list>
           </v-card-text>
@@ -81,8 +79,6 @@ export default {
      this.scrollingDown();
      startSignalRConnection();
       connection.on('ReceiveMessage', (dto) => {
-        console.log(this.room);
-        console.log(dto);
         if(this.room.id===dto.roomId){
         const member = this.members.find(member => member.userId === dto.createdBy);
         const username = member ? (member.username === this.user.username ? 'انت' : member.username) : '';        
@@ -112,7 +108,6 @@ export default {
     getUser(){
       api.get('/accounts/get')
                     .then(response => {
-                      console.log(response.data);
                       this.user = response.data;
                     });
     },
@@ -125,13 +120,11 @@ export default {
                     await api.get('/rooms?id='+this.$route.query.id)
                     .then(response => {
                       this.room = response.data;
-                      console.log(response.data);
                     });
     },
     async getMembers(){
               await  api.get(`/RoomMemberships/Get?roomId=${this.$route.query.id}`)
                 .then(response => {
-                  console.log(response.data);
                   this.members= response.data;
                 });
     },

@@ -1,7 +1,7 @@
 import * as signalR from '@microsoft/signalr';
 
 const connection = new signalR.HubConnectionBuilder()
-  .withUrl('https://localhost:7056/messagehub')
+  .withUrl('https://localhost:5001/messagehub')
   .build();
 
 connection.on('ReceiveMessage', (user, message) => {
