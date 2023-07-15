@@ -66,7 +66,7 @@ export default {
       membersDialog: false,
       allOldMessagesObtained:false,
       Skip:0,
-      Take:5,
+      Take:15,
       members:[]
     };
   },
@@ -74,7 +74,6 @@ export default {
      await this.getRoom();
      await this.getUser();
      await this.getMembers();
-     await this.getOldMessages();
      await this.getOldMessages();
      this.scrollingDown();
      startSignalRConnection();
@@ -101,8 +100,9 @@ export default {
   methods: {
     onScroll(){
       let Div = document.getElementById('myCard');
-     if(Div.scrollTop<10){
+     if(Div.scrollTop<5){
       this.getOldMessages();
+      Div.scrollTop=800;
      } 
     },
     getUser(){
